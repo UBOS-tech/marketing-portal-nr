@@ -1,0 +1,1122 @@
+[
+    {
+        "id": "1bc0eda39a3e8083",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7aa307bccc7f8c6f",
+        "type": "http in",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "url": "/AddNewList",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 140,
+        "wires": [
+            [
+                "d103f20571c845da"
+            ]
+        ]
+    },
+    {
+        "id": "f7dffba69c9ccc86",
+        "type": "http in",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "url": "/allCustomerList",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "d90ac117b8428056"
+            ]
+        ]
+    },
+    {
+        "id": "71a1c44f6636381b",
+        "type": "http in",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "url": "/doNotDisturbCount",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 260,
+        "wires": [
+            [
+                "d56118abf56e6a15"
+            ]
+        ]
+    },
+    {
+        "id": "0aa987cdbe48e99a",
+        "type": "http in",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "url": "/getAllCustomers",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 320,
+        "wires": [
+            [
+                "1fda15fe40ad37d4"
+            ]
+        ]
+    },
+    {
+        "id": "f2ac2ad558cabfbb",
+        "type": "http in",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "url": "/GetCustomerList",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 380,
+        "wires": [
+            [
+                "0d740bd6ddf2ed4a"
+            ]
+        ]
+    },
+    {
+        "id": "75e57e6dee38d907",
+        "type": "http in",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "url": "/GetMarketingList",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 440,
+        "wires": [
+            [
+                "2cb80fdc714fcaa6"
+            ]
+        ]
+    },
+    {
+        "id": "876df623db96824b",
+        "type": "http in",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "url": "/NumberOfCustomers",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 500,
+        "wires": [
+            [
+                "cdb0fbc67ca374f3"
+            ]
+        ]
+    },
+    {
+        "id": "0800d7cd7fb37e6c",
+        "type": "http in",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "url": "/NumberOfMailinglists",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 560,
+        "wires": [
+            [
+                "a4dfca58c39444a9"
+            ]
+        ]
+    },
+    {
+        "id": "d103f20571c845da",
+        "type": "function",
+        "z": "1bc0eda39a3e8083",
+        "name": "function 1",
+        "func": "msg.payload.CreationDate = moment().format('YYYY-MM-DDT00:00:00.000Z')\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "moment",
+                "module": "moment"
+            }
+        ],
+        "x": 320,
+        "y": 140,
+        "wires": [
+            [
+                "eb58e89d2eb18688",
+                "e4642ea215dd5c85"
+            ]
+        ]
+    },
+    {
+        "id": "d90ac117b8428056",
+        "type": "function",
+        "z": "1bc0eda39a3e8083",
+        "name": "function 2",
+        "func": "msg.payload = { \"UsersDoNotDisturb\" : 0}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 200,
+        "wires": [
+            [
+                "a10719f76b114d6e"
+            ]
+        ]
+    },
+    {
+        "id": "5f9e70b964c03ec7",
+        "type": "http response",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 650,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "9e2a2ccc86765781",
+        "type": "http response",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 510,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "da6bd6e96eadc5f6",
+        "type": "http response",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 490,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "0d740bd6ddf2ed4a",
+        "type": "function",
+        "z": "1bc0eda39a3e8083",
+        "name": "function 3",
+        "func": "msg.payload = {\n    CustomerID: { $in: msg.payload.ids }\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 380,
+        "wires": [
+            [
+                "21b26bcdb386bba1"
+            ]
+        ]
+    },
+    {
+        "id": "f7fda3eda3eb74c9",
+        "type": "http response",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 650,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "2cb80fdc714fcaa6",
+        "type": "mongodb in",
+        "z": "1bc0eda39a3e8083",
+        "mongodb": "",
+        "name": "",
+        "collection": "MailingList",
+        "operation": "find",
+        "x": 340,
+        "y": 440,
+        "wires": [
+            [
+                "228bd331dd36ca30"
+            ]
+        ]
+    },
+    {
+        "id": "228bd331dd36ca30",
+        "type": "http response",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 490,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "cdb0fbc67ca374f3",
+        "type": "mongodb in",
+        "z": "1bc0eda39a3e8083",
+        "mongodb": "",
+        "name": "",
+        "collection": "Customers",
+        "operation": "count",
+        "x": 360,
+        "y": 500,
+        "wires": [
+            [
+                "7bdb8f89b1436810"
+            ]
+        ]
+    },
+    {
+        "id": "7bdb8f89b1436810",
+        "type": "http response",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 510,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "a4dfca58c39444a9",
+        "type": "mongodb in",
+        "z": "1bc0eda39a3e8083",
+        "mongodb": "",
+        "name": "",
+        "collection": "MailingList",
+        "operation": "count",
+        "x": 360,
+        "y": 560,
+        "wires": [
+            [
+                "62bd47c03681073a"
+            ]
+        ]
+    },
+    {
+        "id": "62bd47c03681073a",
+        "type": "http response",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 510,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "118b90d0650c9451",
+        "type": "http in",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "url": "/DeleteQuery",
+        "method": "delete",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 640,
+        "wires": [
+            [
+                "9a75ab438aca31d5"
+            ]
+        ]
+    },
+    {
+        "id": "747521c93e941e0d",
+        "type": "http in",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "url": "/FindQuery",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 720,
+        "wires": [
+            [
+                "12f4eb4c9ad63080"
+            ]
+        ]
+    },
+    {
+        "id": "16705c9045bb18e8",
+        "type": "http in",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "url": "/InsertQuery",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 820,
+        "wires": [
+            [
+                "9cbba83b30ad42c4",
+                "9da67f648004d93b"
+            ]
+        ]
+    },
+    {
+        "id": "ccb1e9af3e9b1c1e",
+        "type": "http in",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "url": "/UpdateQuery",
+        "method": "put",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 920,
+        "wires": [
+            [
+                "4b8dd565c637545a"
+            ]
+        ]
+    },
+    {
+        "id": "9a75ab438aca31d5",
+        "type": "function",
+        "z": "1bc0eda39a3e8083",
+        "name": "function 4",
+        "func": "msg.payload = {\n    \"_id\": objectid(msg.req.query._id)\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 340,
+        "y": 640,
+        "wires": [
+            [
+                "c08f8c53df06ad78",
+                "d8057af43d63f19e"
+            ]
+        ]
+    },
+    {
+        "id": "c08f8c53df06ad78",
+        "type": "http response",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 510,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "d8057af43d63f19e",
+        "type": "mongodb out",
+        "z": "1bc0eda39a3e8083",
+        "mongodb": "",
+        "name": "",
+        "collection": "Customers",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "delete",
+        "x": 520,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "dcc61c09c8e1b526",
+        "type": "mongodb in",
+        "z": "1bc0eda39a3e8083",
+        "mongodb": "",
+        "name": "",
+        "collection": "Customers",
+        "operation": "aggregate",
+        "x": 460,
+        "y": 720,
+        "wires": [
+            [
+                "312333ded5d553be"
+            ]
+        ]
+    },
+    {
+        "id": "312333ded5d553be",
+        "type": "http response",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 610,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "12f4eb4c9ad63080",
+        "type": "function",
+        "z": "1bc0eda39a3e8083",
+        "name": "function 5",
+        "func": "// const type = msg.payload.type\n// const sort = Number(msg.payload.sort)\n\n// msg.sort = {\n//     type: sort\n// }\n\n\n msg.payload = [\n    {\n        $addFields: {\n            type: \"$payload.type\",\n            sort: { type: \"$payload.sort\" }\n        }\n    },\n    {\n        $sort: {\n            CustomerID: 1 // використовуйте 1 для сортування в порядку зростання, або -1 для сортування в порядку спадання\n        }\n    }\n]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 720,
+        "wires": [
+            [
+                "dcc61c09c8e1b526"
+            ]
+        ]
+    },
+    {
+        "id": "9da67f648004d93b",
+        "type": "http response",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 310,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "9cbba83b30ad42c4",
+        "type": "mongodb out",
+        "z": "1bc0eda39a3e8083",
+        "mongodb": "",
+        "name": "",
+        "collection": "Customers",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "insert",
+        "x": 320,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "eb58e89d2eb18688",
+        "type": "http response",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 470,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "71e026fe1c9f22b5",
+        "type": "function",
+        "z": "1bc0eda39a3e8083",
+        "name": "function 2",
+        "func": "const api_key = global.get('token');\n\nmsg.url = 'https://api.openai.com/v1/chat/completions';\nmsg.headers = {\n    'Content-Type': 'application/json',\n    'Authorization': api_key\n};\n\nif (msg.payload.type === 'shorter') {\n    msg.payload = {\n        \"model\": \"gpt-3.5-turbo\",\n        \"temperature\": 0.5,\n        \"messages\": [\n            {\n                \"role\": \"system\", \"content\": `You are a smart assistant who change mail to be shorter without change context. Return just changed email text without title`\n            },\n            {\n                \"role\": \"user\", \"content\": \" Mail: \" + msg.payload.mail\n            }\n        ]\n    }\n}\n\nif (msg.payload.type === 'elaborate') {\n\n    msg.payload = {\n        \"model\": \"gpt-3.5-turbo\",\n        \"temperature\": 0.5,\n        \"messages\": [\n            {\n                \"role\": \"system\", \"content\": `You are a smart assistant who change mail to be more elaborate without change context.`\n            },\n            {\n                \"role\": \"user\", \"content\": \" Mail: \" + msg.payload.mail\n            }\n        ]\n    }\n}\nif (msg.payload.type === 'formalize') {\n\n    msg.payload = {\n        \"model\": \"gpt-3.5-turbo\",\n        \"temperature\": 0.5,\n        \"messages\": [\n            {\n                \"role\": \"system\", \"content\": `You are a smart assistant who change mail to be more formalize without change context.`\n            },\n            {\n                \"role\": \"user\", \"content\": \" Mail: \" + msg.payload.mail\n            }\n        ]\n    }\n\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1180,
+        "wires": [
+            [
+                "0d92776be5fda4f4"
+            ]
+        ]
+    },
+    {
+        "id": "0d92776be5fda4f4",
+        "type": "http request",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 490,
+        "y": 1180,
+        "wires": [
+            [
+                "04050d1738600a21"
+            ]
+        ]
+    },
+    {
+        "id": "b1f7cb0d0cf0de19",
+        "type": "http in",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "url": "/changeMail",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 1180,
+        "wires": [
+            [
+                "71e026fe1c9f22b5"
+            ]
+        ]
+    },
+    {
+        "id": "04050d1738600a21",
+        "type": "http response",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 650,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "1740a5bb4ea2d6df",
+        "type": "function",
+        "z": "1bc0eda39a3e8083",
+        "name": "function 6",
+        "func": "const api_key = global.get('token');\n\nmsg.url = 'https://api.openai.com/v1/chat/completions';\nmsg.headers = {\n    'Content-Type': 'application/json',\n    'Authorization': api_key\n};\n\nmsg.payload = {\n    \"model\": \"gpt-3.5-turbo\",\n    \"temperature\": 0.5,\n    \"messages\": [\n        {\n            \"role\": \"system\", \"content\": `You are a smart assistant who writes an email. Please write a structured detailed letter according to the request`},\n        {\n            \"role\": \"user\", \"content\": \" Request: \" + msg.payload.prompt }\n    ]\n}\n\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1240,
+        "wires": [
+            [
+                "8076c4b67d57da6e"
+            ]
+        ]
+    },
+    {
+        "id": "8076c4b67d57da6e",
+        "type": "http request",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 490,
+        "y": 1240,
+        "wires": [
+            [
+                "cf6bb89e6b9a23c6"
+            ]
+        ]
+    },
+    {
+        "id": "e174c28d0a5b1cd5",
+        "type": "http in",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "url": "/writeMail",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 1240,
+        "wires": [
+            [
+                "1740a5bb4ea2d6df"
+            ]
+        ]
+    },
+    {
+        "id": "cf6bb89e6b9a23c6",
+        "type": "http response",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 670,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "27c7e563f804c8c4",
+        "type": "http response",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 470,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "5eb32a9efd60fb66",
+        "type": "mongodb out",
+        "z": "1bc0eda39a3e8083",
+        "mongodb": "",
+        "name": "",
+        "collection": "Customers",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "update",
+        "x": 480,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "4b8dd565c637545a",
+        "type": "function",
+        "z": "1bc0eda39a3e8083",
+        "name": "function 7",
+        "func": "msg.query = {\n    _id: objectid(msg.payload._id)\n}\nmsg.payload = {\n    $set: {\n        CustomerID: msg.payload.CustomerID,\n        CustomerEmailID: msg.payload.CustomerEmailID,\n        CustomerName: msg.payload.CustomerName,\n        UsersDoNotDisturb: msg.payload.UsersDoNotDisturb\n        \n    }\n}\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 320,
+        "y": 920,
+        "wires": [
+            [
+                "5eb32a9efd60fb66",
+                "27c7e563f804c8c4"
+            ]
+        ]
+    },
+    {
+        "id": "bbeca691f931f544",
+        "type": "http in",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "url": "/sendMail",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 1320,
+        "wires": [
+            [
+                "55c92a3a24f46efd"
+            ]
+        ]
+    },
+    {
+        "id": "55c92a3a24f46efd",
+        "type": "function",
+        "z": "1bc0eda39a3e8083",
+        "name": "function 8",
+        "func": "msg.array = msg.payload.emails\nmsg.text = msg.payload.text\nmsg.title = msg.payload.title\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1320,
+        "wires": [
+            [
+                "96902f1f269adb83"
+            ]
+        ]
+    },
+    {
+        "id": "df500be2cdfbba04",
+        "type": "e-mail",
+        "z": "1bc0eda39a3e8083",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 570,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "d7809b0302e46ecf",
+        "type": "function",
+        "z": "1bc0eda39a3e8083",
+        "name": "function 9",
+        "func": "\nmsg.to = msg.payload;\nmsg.topic = msg.title;\nmsg.payload = msg.text;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1380,
+        "wires": [
+            [
+                "df500be2cdfbba04",
+                "78e4e773607470bd"
+            ]
+        ]
+    },
+    {
+        "id": "96902f1f269adb83",
+        "type": "array-loop",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "key": "al96902f1f269adb83",
+        "keyType": "msg",
+        "reset": false,
+        "resetValue": "value-null",
+        "array": "array",
+        "arrayType": "msg",
+        "x": 480,
+        "y": 1320,
+        "wires": [
+            [
+                "c1fc9dd748b654bd"
+            ],
+            [
+                "d7809b0302e46ecf"
+            ]
+        ]
+    },
+    {
+        "id": "78e4e773607470bd",
+        "type": "delay",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "4",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 590,
+        "y": 1380,
+        "wires": [
+            [
+                "96902f1f269adb83"
+            ]
+        ]
+    },
+    {
+        "id": "c1fc9dd748b654bd",
+        "type": "http response",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 630,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "00363f4fac9672c7",
+        "type": "http in",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "url": "/updateList",
+        "method": "put",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 1020,
+        "wires": [
+            [
+                "575378397cf51eb2"
+            ]
+        ]
+    },
+    {
+        "id": "575378397cf51eb2",
+        "type": "function",
+        "z": "1bc0eda39a3e8083",
+        "name": "function 18",
+        "func": "msg.query = {\n    _id: objectid(msg.payload._id)\n}\n\nmsg.payload = {\n    $set: {\n        Discord_Webhook: msg.payload.Discord_Webhook,\n        Mailinglist: msg.payload.Mailinglist,\n        Users: msg.payload.Users,\n        MailinglistID: msg.payload.MailinglistID,\n        Icon: msg.payload.Icon\n    }\n}\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 310,
+        "y": 1020,
+        "wires": [
+            [
+                "3d270e40a3bd99a3",
+                "573ef0364db3bcfc"
+            ]
+        ]
+    },
+    {
+        "id": "573ef0364db3bcfc",
+        "type": "mongodb out",
+        "z": "1bc0eda39a3e8083",
+        "mongodb": "",
+        "name": "",
+        "collection": "MailingList",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "update",
+        "x": 480,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "3d270e40a3bd99a3",
+        "type": "http response",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 470,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "932a45bf7553855c",
+        "type": "http in",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "url": "/deleteList",
+        "method": "delete",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 1120,
+        "wires": [
+            [
+                "9a25067edb6352c9"
+            ]
+        ]
+    },
+    {
+        "id": "9a25067edb6352c9",
+        "type": "function",
+        "z": "1bc0eda39a3e8083",
+        "name": "function 19",
+        "func": "msg.payload = {\n    \"_id\": objectid(msg.req.query._id)\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 340,
+        "y": 1120,
+        "wires": [
+            [
+                "77deabc76acea8e0",
+                "4e3c99f3685e9a24"
+            ]
+        ]
+    },
+    {
+        "id": "77deabc76acea8e0",
+        "type": "http response",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 490,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "4e3c99f3685e9a24",
+        "type": "mongodb out",
+        "z": "1bc0eda39a3e8083",
+        "mongodb": "",
+        "name": "",
+        "collection": "MailingList",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "delete",
+        "x": 500,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "21b26bcdb386bba1",
+        "type": "mongodb in",
+        "z": "1bc0eda39a3e8083",
+        "mongodb": "",
+        "name": "",
+        "collection": "Customers",
+        "operation": "find",
+        "x": 500,
+        "y": 380,
+        "wires": [
+            [
+                "f7fda3eda3eb74c9"
+            ]
+        ]
+    },
+    {
+        "id": "1fda15fe40ad37d4",
+        "type": "mongodb in",
+        "z": "1bc0eda39a3e8083",
+        "mongodb": "",
+        "name": "",
+        "collection": "Customers",
+        "operation": "find",
+        "x": 340,
+        "y": 320,
+        "wires": [
+            [
+                "da6bd6e96eadc5f6"
+            ]
+        ]
+    },
+    {
+        "id": "d56118abf56e6a15",
+        "type": "mongodb in",
+        "z": "1bc0eda39a3e8083",
+        "mongodb": "",
+        "name": "",
+        "collection": "Customers",
+        "operation": "count",
+        "x": 360,
+        "y": 260,
+        "wires": [
+            [
+                "9e2a2ccc86765781"
+            ]
+        ]
+    },
+    {
+        "id": "a10719f76b114d6e",
+        "type": "mongodb in",
+        "z": "1bc0eda39a3e8083",
+        "mongodb": "",
+        "name": "",
+        "collection": "Customers",
+        "operation": "find",
+        "x": 480,
+        "y": 200,
+        "wires": [
+            [
+                "5f9e70b964c03ec7"
+            ]
+        ]
+    },
+    {
+        "id": "e4642ea215dd5c85",
+        "type": "mongodb out",
+        "z": "1bc0eda39a3e8083",
+        "mongodb": "",
+        "name": "",
+        "collection": "MailingList",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "insert",
+        "x": 480,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "9b21cba03ac8ba84",
+        "type": "inject",
+        "z": "1bc0eda39a3e8083",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 40,
+        "wires": [
+            [
+                "53fbf35d309843e3"
+            ]
+        ]
+    },
+    {
+        "id": "53fbf35d309843e3",
+        "type": "function",
+        "z": "1bc0eda39a3e8083",
+        "name": "SET TOKEN",
+        "func": "global.set(\"token\", `Bearer `);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    }
+]
